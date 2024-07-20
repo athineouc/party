@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Event of the Summer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Russo One', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #EEE;
+            overflow-x: hidden;
+            text-align: center;
+            background: url('https://st.depositphotos.com/1222950/2590/v/600/depositphotos_25908791-stock-illustration-disco-abstract-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .overlay {
+            background-color: rgba(23, 21, 59, 0.6); /* Add an overlay to improve text readability */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            background-color: rgba(46, 35, 108, 0.8); /* Slightly transparent background */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        header {
+            padding: 20px 0;
+            color: #EEE;
+            animation: dropDown 1s ease-in-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .party-info {
+            margin: 20px 0;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        h2 {
+            color: #EEE;
+            border-bottom: 2px solid #EEE;
+            padding-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: #433D8B;
+            color: #EEE;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #2E236C;
+            transform: scale(1.1);
+        }
+
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://ibiza-spotlight1.b-cdn.net/sites/default/files/styles/auto_1500_width/public/article-images/134307/slideshow-1561030304.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .splash-screen .text {
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            animation: fadeIn 3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes dropDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="splash-screen" id="splash-screen">
+    <div class="text">The Event of the Summer!</div>
+</div>
+
+<div class="overlay"></div>
+
+<div class="container hidden" id="main-content">
+    <header>
+        <h1>TsiamiChristos Birthday Party!</h1>
+    </header>
+    <section class="party-info">
+        <h2>Party Details</h2>
+        <p>Date: July 25, 2024</p>
+        <p>Time: 7:00 PM - 12:00 AM</p>
+        <p>Venue: Konstantinos' House</p>
+        <a href="https://www.google.com/maps/place/-25.363,131.044" target="_blank" class="cta-button">View Location</a>
+    </section>
+    <section class="party-info">
+        <h2>Festify</h2>
+        <a href="https://festify.com/link-to-your-festify" target="_blank" class="cta-button">Join the Festify Playlist</a>
+    </section>
+</div>
+
+<script>
+    window.onload = function() {
+        setTimeout(() => {
+            document.getElementById('splash-screen').style.display = 'none';
+            document.getElementById('main-content').classList.remove('hidden');
+        }, 3000); // 3 seconds splash screen
+    };
+</script>
+</body>
+</html>
