@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Event of the Summer</title>
+    <title>Samos Party</title>
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <style>
         body {
@@ -132,11 +132,22 @@
         .hidden {
             display: none;
         }
+
+        #fireworks-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/index.umd.min.js"></script>
 </head>
 <body>
 <div class="splash-screen" id="splash-screen">
-    <div class="text">The Event of the Summer!</div>
+    <div class="text">The Ultimate Event Of The Summer!</div>
 </div>
 
 <div class="overlay"></div>
@@ -159,12 +170,30 @@
     </section>
 </div>
 
+<div id="fireworks-container"></div>
+
 <script>
     window.onload = function() {
         setTimeout(() => {
             document.getElementById('splash-screen').style.display = 'none';
             document.getElementById('main-content').classList.remove('hidden');
-        }, 2000); // 3 seconds splash screen
+
+            // Fireworks effect
+            const container = document.getElementById('fireworks-container');
+            const fireworks = new Fireworks.default(container, {
+                maxRockets: 3,
+                rocketSpawnInterval: 150,
+                numParticles: 100,
+                explosionMinHeight: 0.2,
+                explosionMaxHeight: 0.9,
+                explosionChance: 0.08
+            });
+            fireworks.start();
+
+            setTimeout(() => {
+                fireworks.stop();
+            }, 5000); // Fireworks for 1 second
+        }, 3000); // 3 seconds splash screen
     };
 </script>
 </body>
