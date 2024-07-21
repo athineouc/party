@@ -151,6 +151,8 @@
             .container {
                 width: 90%;
                 padding: 10px;
+                top: 1%; /* Reduced top gap for mobile */
+                transform: translate(-50%, 0); /* Removed vertical centering */
             }
 
             .party-info {
@@ -212,7 +214,7 @@
 
             setTimeout(() => {
                 fireworks.stop();
-            }, 5000); // Fireworks for 5 second
+            }, 5000); // Fireworks for 1 second
         }, 2000); // 2 seconds splash screen
     };
 </script>
