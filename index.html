@@ -15,11 +15,11 @@
             text-align: center;
             background: url('https://i.ibb.co/6PMKHww/samosparty2.webp') no-repeat center center fixed;
             background-size: cover;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .overlay {
-            background-color: rgba(23, 21, 59, 0.6);
+            background-color: rgba(23, 21, 59, 0.6); /* Add an overlay to improve text readability */
             position: absolute;
             top: 0;
             left: 0;
@@ -29,19 +29,16 @@
         }
 
         .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: relative; /* Changed to relative for better control */
+            margin: 0 auto;
+            top: 10%;
             z-index: 2;
             width: 80%;
             padding: 20px;
-            background-color: rgba(46, 35, 108, 0.8);
+            background-color: rgba(46, 35, 108, 0.8); /* Slightly transparent background */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             border-radius: 10px;
             animation: fadeIn 2s ease-in;
-            max-height: 90%; /* Added max-height */
-            overflow-y: auto; /* Added overflow-y */
         }
 
         header {
@@ -56,7 +53,7 @@
         }
 
         .party-info {
-            margin: 40px 0;
+            margin: 40px 0; /* Increased margin for more gap between sections */
             animation: slideIn 1s ease-in-out;
         }
 
@@ -145,30 +142,26 @@
             z-index: 10;
         }
 
+        .scroller {
+            overflow-x: auto;
+            padding: 20px;
+        }
+
         .slider {
-            margin: 20px auto;
             display: flex;
-            overflow-x: scroll;
-            scroll-snap-type: x mandatory;
-            width: 80%;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
 
         .slide {
             flex: 0 0 auto;
-            scroll-snap-align: center;
-            width: 200px;
-            height: 150px;
-            margin: 0 10px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px; /* Adjust width as needed */
         }
 
-        .slide img,
-        .slide iframe {
+        iframe {
             width: 100%;
-            height: 100%;
+            height: 200px; /* Adjust height as needed */
         }
 
         @media (max-width: 600px) {
@@ -179,24 +172,20 @@
             .container {
                 width: 90%;
                 padding: 10px;
-                top: 1%;
-                transform: translate(-50%, 0);
-                max-height: calc(100% - 20px); /* Adjusted for mobile view */
+                top: 1%; /* Reduced top gap for mobile */
+                transform: translate(0, 0); /* Removed vertical centering */
             }
 
             .party-info {
                 margin: 20px 0;
             }
-
-            .slide {
-                width: 90%;
-            }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/index.umd.min.js"></script>
 </head>
 <body>
 <div class="splash-screen" id="splash-screen">
-    <div class="text">The Ultimate Event Of The Summer!</div>
+    <div class="text">Garden Music Party 2024<br> TsiamiChristos Birthday Open Party! </div>
 </div>
 
 <div class="overlay"></div>
@@ -225,23 +214,26 @@
         <p><u>Starting Time: 9:00 PM - ??? AM</u></p>
         <p><u>Venue: Tsiamitros House</u></p>
     </section>
-
     <section class="party-info">
         <h2>Venue Photos</h2>
         <p> Scroooooll ➡️🥳➡️🥳</p>
-        <div class="slider">
-            <div class="slide">
-                <iframe src="https://player.vimeo.com/video/990207426?h=ddbe599f08" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="slide">
-                <iframe src="https://player.vimeo.com/video/990303400?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="slide">
-                <iframe src="https://player.vimeo.com/video/990305251?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <div class="scroller">
+            <div class="slider">
+                <div class="slide">
+                    <iframe src="https://player.vimeo.com/video/990207426?h=ddbe599f08" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="slide">
+                    <iframe src="https://player.vimeo.com/video/990303400?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="slide">
+                    <iframe src="https://player.vimeo.com/video/990305251?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="slide">
+                    <a href="https://ibb.co/PTCjY13"><img src="https://i.ibb.co/PTCjY13/IMG-20240726-WA0002.jpg" alt="IMG-20240726-WA0002" border="0"></a>
+                </div>
             </div>
         </div>
     </section>
-
     <section class="party-info">
         <h2>Location</h2>
         <a href="https://www.google.com/maps/place/37%C2%B041'58.1%22N+26%C2%B054'19.5%22E/@37.6991895,26.9055041,16.01z/data=!4m4!3m3!8m2!3d37.6994722!4d26.9054167?entry=ttu" target="_blank" class="cta-button">📍Google Maps Location</a>
